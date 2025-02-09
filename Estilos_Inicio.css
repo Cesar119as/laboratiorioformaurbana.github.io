@@ -1,0 +1,115 @@
+/* Secciones */
+section {
+    padding: 30px 10%;
+}
+
+/* Carrusel */
+.carrucel {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrucel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrucel-item {
+    min-width: 100%;
+}
+
+.carrucel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    display: block;
+    
+}
+
+.carrucel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 40px; /* Ajuste del tamaño */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrucel-control.prev {
+    left: 20px; 
+}
+
+.carrucel-control.next {
+    right: 20px;
+}
+
+.carrucel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Galería de imágenes */
+.gallery-container {
+    display: grid;
+    margin-top: 0px;
+    grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas */
+    gap: 15px;
+    width: 100%;
+    padding: 0px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.gallery-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según lo necesites */
+    object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsive: Dos columnas en tabletas */
+@media (max-width: 992px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive: Una sola columna en móviles */
+@media (max-width: 600px) {
+    .gallery-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

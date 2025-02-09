@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Estilos_Cabecera_Pie.css">
+    <link rel="stylesheet" href="Estilos_Inicio.css">
+</head>
+<body>
+    <!-- Contenedor de la barra de navegación -->
+    <div id="navbar-container"></div>
+
+    <!-- Contenedor de contenido dinámico -->
+    <div id="content">
+        <section id="carrucel">
+            <div class="carrucel">
+                <div class="carrucel-inner">
+                    <div class="carrucel-item active">
+                        <img src="Imagenes/UAM.png" alt="Imagen 1">
+                    </div>
+                    <div class="carrucel-item">
+                        <img src="Imagenes/pruebacarrucel4.jpg" alt="Imagen 2">
+                    </div>
+                    <div class="carrucel-item">
+                        <img src="Imagenes/pruebacarrucel2.jpg" alt="Imagen 3">
+                    </div>
+                    <div class="carrucel-item">
+                        <img src="Imagenes/pruebacarrucel3.jpg" alt="Imagen 4">
+                    </div>
+                    <div class="carrucel-item">
+                        <img src="Imagenes/pruebacarrucel5.jpg" alt="Imagen 5">
+                    </div>
+                </div>
+                <button class="carrucel-control prev" onclick="movecarrucel(-1)">&#10094;</button>
+                <button class="carrucel-control next" onclick="movecarrucel(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="galeria">
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="Imagenes/ejemplogaleria.jpeg" alt="Imagen 1">
+                    <div class="text">
+                        <h3 class="title">El Gran Silencio cierra los festejos de los 50 años de la UAM</h3>
+                        <p class="date">9 diciembre, 2024</p>
+                        <p class="content">Nallely Sánchez Rivas La banda regiomontana El Gran Silencio se une a la
+                            celebración por el 50 aniversario de la Universidad Autónoma Metropolitana con un concierto
+                            inolvidable en las áreas</p>
+                    </div>
+                    <a href="pagina1.html" class="read-more">Leer más</a>
+                </div>
+                <div class="gallery-item">
+                    <img src="Imagenes/ejemplogaleria2.jpeg" alt="Imagen 2">
+                    <p class="text">
+                        <h3 class="title">El Gran Silencio cierra los festejos de los 50 años de la UAM</h3>
+                        <p class="date">9 diciembre, 2024</p>
+                        <p class="content">Nallely Sánchez Rivas La banda regiomontana El Gran Silencio se une a la
+                            celebración por el 50 aniversario de la Universidad Autónoma Metropolitana con un concierto
+                            inolvidable en las áreas</p>
+                    <a href="pagina2.html" class="read-more">Leer más</a>
+                </div>
+                <div class="gallery-item">
+                    <img src="Imagenes/ejemplogaleria3.jpeg" alt="Imagen 3">
+                    <p class="text"><h3 class="title">El Gran Silencio cierra los festejos de los 50 años de la UAM</h3>
+                        <p class="date">9 diciembre, 2024</p>
+                        <p class="content">Nallely Sánchez Rivas La banda regiomontana El Gran Silencio se une a la
+                            celebración por el 50 aniversario de la Universidad Autónoma Metropolitana con un concierto
+                            inolvidable en las áreas</p>
+                    <a href="pagina3.html" class="read-more">Leer más</a>
+                </div>
+                <div class="gallery-item">
+                    <img src="image4.jpg" alt="Imagen 4">
+                    <p class="text">Descripción breve 3</p>
+                    <a href="pagina4.html" class="read-more">Leer más</a>
+                </div>
+                <div class="gallery-item">
+                    <img src="image5.jpg" alt="Imagen 5">
+                    <p class="text">Descripción breve 3</p>
+                    <a href="pagina5.html" class="read-more">Leer más</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contenedor del pie de página -->
+    <div id="footer-container"></div>
+
+    <script src="Cabecera-Pie.js"></script>
+</body>
+</html>

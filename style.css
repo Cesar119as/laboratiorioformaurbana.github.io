@@ -1,0 +1,287 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: "Poly", serif;
+    background-color: rgb(255, 255, 255);
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+/* Botón de menú en pantallas pequeñas */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 20;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 2px;
+}
+
+/* Asegurar que el menú esté oculto por defecto en pantallas pequeñas */
+@media (max-width: 1600px) {
+    nav.navbar ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 20px;
+        z-index: 10;
+
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    /* Mostrar el menú cuando tenga la clase 'show' */
+    nav.navbar ul.show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Mostrar el botón del menú en pantallas pequeñas */
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+
+/* Imagen de fondo fija */
+.menu-imagen {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 60px; 
+    z-index: 1; 
+}
+/* Barra de navegación */
+nav.navbar {
+    display: flex !important;
+    align-items: center !important;
+    position: fixed !important;
+    width: 100% !important;
+    background-color: transparent !important;
+    box-shadow: 1px 2px 5px rgb(110, 35, 35) !important;
+    height: 60px !important;
+    z-index: 10 !important;
+    padding: 0 20px !important;
+    flex-wrap: wrap !important;
+}
+
+/* Logos UAM */
+
+nav.navbar .logo-item {
+    display: flex !important;
+    align-items: center;
+    gap: 30px; /*separación entre logos */
+    padding-left: 20%; /*separación borde izquierdo */
+   
+}
+
+nav.navbar .logo-item img {
+    max-height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+nav.navbar .logo-item img:hover {
+    transform: scale(1.1); /* Aumentar el tamaño de la imagen al 110% */
+}
+
+nav.navbar ul {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: 20px; 
+}
+
+nav.navbar ul li a {
+    font-size: 18px;
+    padding: 12px 20px;
+    color: #000;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav.navbar > ul > li > a:hover {
+    background-color: #c94343;
+}
+
+nav.navbar ul li {
+    position: relative; /* Necesario para que el submenú se posicione correctamente */
+}
+
+
+
+/* Submenú */
+nav.navbar ul li ul.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(153, 37, 37);
+    min-width: 180px;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+nav.navbar ul li:hover ul.submenu {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    
+    min-width: 110px; /* Ancho mínimo */
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+nav.navbar ul li ul.submenu li a:hover {
+    background-color: #c94343; /* El color que prefieras */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Secciones */
+section {
+    padding: 30px 10%;
+}
+
+/* Carrusel */
+.carrucel {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrucel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrucel-item {
+    min-width: 100%;
+}
+
+.carrucel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    display: block;
+    
+}
+
+.carrucel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 40px; /* Ajuste del tamaño */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrucel-control.prev {
+    left: 20px; 
+}
+
+.carrucel-control.next {
+    right: 20px;
+}
+
+.carrucel-control:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Galería de imágenes */
+.gallery-container {
+    display: grid;
+    margin-top: 0px;
+    grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas */
+    gap: 15px;
+    width: 100%;
+    padding: 0px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.gallery-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según lo necesites */
+    object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsive: Dos columnas en tabletas */
+@media (max-width: 992px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive: Una sola columna en móviles */
+@media (max-width: 600px) {
+    .gallery-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
