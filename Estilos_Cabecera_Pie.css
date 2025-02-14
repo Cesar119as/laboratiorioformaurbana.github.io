@@ -177,7 +177,7 @@ footer {
 
 /* VERSION PARA CECULARES */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .menu-imagen {
         height: 40px !important; 
     }
