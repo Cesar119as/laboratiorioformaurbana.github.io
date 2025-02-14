@@ -1,4 +1,3 @@
-/* Asegurar que los estilos no se puedan modificar */
 :root {
     --reset-margin: 0;
     --reset-padding: 0;
@@ -45,7 +44,7 @@ a {
     border-radius: 2px !important;
 }
 
-/* Asegurar que el menú esté oculto por defecto en pantallas pequeñas */
+/* Menú oculto por defecto en pantallas pequeñas */
 @media (max-width: 1600px) {
     nav.navbar ul {
         display: flex !important;
@@ -173,4 +172,34 @@ footer {
     color: white !important;
     text-align: center !important;
     padding: 30px !important;
+}
+
+
+/* VERSION PARA CECULARES */
+
+@media (max-width: 768px) {
+    .menu-imagen {
+        height: 40px !important; 
+    }
+
+    nav.navbar .logo-item img {
+        max-height: 40px !important; 
+    }
+
+    .menu-imagen {
+        position: fixed !important; 
+        top: 0 !important; 
+        left: 0 !important; 
+        width: 100% !important; 
+        height: 60px !important; 
+        z-index: 1 !important; 
+    }
+}
+
+
+/* Menu en sanwich cunado la ventana es pequeña */
+@media (max-width: 992px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
