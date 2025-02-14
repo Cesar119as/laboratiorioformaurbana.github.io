@@ -179,13 +179,13 @@ footer {
 
 /* VERSION PARA TABLET */
 
-@media (max-width: 1080px) {
+@media (max-width: 600px) {
     .menu-imagen {
         height: 30px !important; 
     }
 
     nav.navbar .logo-item img {
-        max-height: 30px !important; 
+        max-height: 25px !important; 
     }
 
     .menu-imagen {
