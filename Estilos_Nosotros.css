@@ -7,8 +7,91 @@
     list-style: none;
 }
 
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif; /* Tipo de letra */
+    font-size: 1.1em; /* Tamaño texto */
+}
+
 #Nosotros {
-    padding: 80px;
+    padding: 100px;
+    line-height: 1.5; /*Sparación entre líneas */
     text-align: justify; 
+}
+
+/* Estilo para el título */
+#Nosotros p:first-of-type {
+    text-align: center;
+    font-size: 2.5em; /* Título más grande */
+    color: rgb(75, 131, 235);
+    font-weight: bold;
+    margin-bottom: 50px; /* Espacio extra después del título */
+}
+
+/* Estilo para los subtítulos */
+#Nosotros p strong {
+    font-size: 1.4em; /* Tamaño*/
+    display: block;
+    margin-top: 40px; /* Espacio*/
+    font-weight: bold;
+}
+
+#Nosotros h3 {
+    margin-bottom: 10px;
+   
+}
+
+
+/* Mayor separación entre párrafos */
+#Nosotros p {
+    margin-bottom: 10px;
+    line-height: 2;
+   
+}
+
+/* VERSION PARA CECULARES */
+
+@media (max-width: 600px) {
+
+    body {
+        font-family: Arial, sans-serif; /* Tipo de letra */
+        font-size: 0.9em; /* Tamaño texto */
+    }
     
+    #Nosotros {
+        padding: 50px;
+        line-height: 1.5; /*Sparación entre líneas */
+        text-align: justify; 
+    }
+    
+    /* Estilo para el título */
+    #Nosotros p:first-of-type {
+        text-align: center;
+        font-size: 1.5em; /* Título más grande */
+        color: rgb(75, 131, 235);
+        font-weight: bold;
+        margin-bottom: 50px; /* Espacio extra después del título */
+    }
+    
+    /* Estilo para los subtítulos */
+    #Nosotros p strong {
+        font-size: 1.4em; /* Tamaño*/
+        display: block;
+        margin-top: 40px; /* Espacio*/
+        font-weight: bold;
+    }
+    
+    #Nosotros h3 {
+        margin-bottom: 10px;
+       
+    }
+    
+    
+    /* Mayor separación entre párrafos */
+    #Nosotros p {
+        margin-bottom: 10px;
+        line-height: 2;
+    }
+
+
 }
