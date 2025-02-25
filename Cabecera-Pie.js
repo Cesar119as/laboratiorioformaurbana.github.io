@@ -4,8 +4,8 @@ window.onload = function () {
         .then(response => response.text())
         .then(data => {
             document.body.insertAdjacentHTML('afterbegin', data);
-            setupMenu(); // Llamar a la función para inicializar el menú
-            setupLinks(); // Llamar a la función para actualizar los enlaces dinámicos
+            setupMenu(); // Inicializa el menú
+            setupLinks(); // Enlaces dinámicos
         })
         .catch(error => console.error('Error al cargar el encabezado:', error));
 
@@ -17,11 +17,10 @@ window.onload = function () {
         })
         .catch(error => console.error('Error al cargar el pie de página:', error));
 
-    // Configurar la carga dinámica de contenido
     setupLinks();
 };
 
-// Función para manejar la visibilidad del menú hamburguesa
+// Manejar la visibilidad del menú hamburguesa
 function setupMenu() {
     const menuToggle = document.getElementById("menu-toggle");
     const menu = document.getElementById("menu");
@@ -31,19 +30,36 @@ function setupMenu() {
         return;
     }
 
-    // Funcionalidad para abrir/cerrar el menú
+// Manejo de submenú: Mostrar/ocultar submenú al hacer clic
+const menuItems = menu.querySelectorAll('li');
+menuItems.forEach(item => {
+    const submenu = item.querySelector('ul.submenu');
+          if (submenu) {
+              item.addEventListener('click', function (event) {
+                  event.stopPropagation(); // Evitar que el clic se propague
+                  submenu.classList.toggle('show');
+              });
+          }
+      });
+
+    // Abrir/cerrar el menú
     menuToggle.addEventListener("click", function () {
         menu.classList.toggle("show");
     });
 
-    // Cerrar el menú cuando se haga clic en un enlace
+    // Cerrar el menú cuando se haga clic en un enlace, excepto en "Mapas"
     const menuLinks = menu.querySelectorAll('a'); // Seleccionar todos los enlaces dentro del menú
     menuLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            menu.classList.remove("show"); // Cerrar el menú
+        link.addEventListener("click", function (event) {
+            // Verificar si el enlace clicado no es "Mapas"
+            if (link.textContent !== "Mapas") {
+                menu.classList.remove("show"); // Cerrar el menú solo si no es "Mapas"
+            }
         });
     });
-
+    submenu.addEventListener('mouseleave', () => {
+                submenu.classList.remove('show');
+            });
     // Cerrar el menú si se hace clic fuera
     document.addEventListener("click", function (event) {
         if (!event.target.closest("#menu") && !event.target.closest("#menu-toggle")) {
@@ -57,24 +73,24 @@ function setupLinks() {
     document.querySelectorAll('a').forEach(link => {
         if (!link.hasAttribute('target') || link.getAttribute('target') !== '_blank') {
             link.addEventListener('click', function (event) {
-                event.preventDefault(); // Evita que el navegador recargue la página
+                event.preventDefault(); 
                 
-                const url = this.getAttribute('href'); // Obtener la URL del enlace
+                const url = this.getAttribute('href'); 
                 if (url !== '#') {
-                    loadContent(url); // Cargar solo el contenido dinámico
-                    history.pushState(null, '', url); // Actualizar la URL sin recargar
+                    loadContent(url); 
+                    history.pushState(null, '', url); 
                 }
             });
         }
     });
 }
 
-// Función para cargar contenido sin recargar la barra de navegación
+// Cargar contenido sin recargar la barra de navegación
 function loadContent(url) {
     fetch(url)
         .then(response => response.text())
         .then(data => {
-            document.getElementById('content').innerHTML = data; // Reemplazar el contenido
+            document.getElementById('content').innerHTML = data; 
         })
         .catch(error => console.error('Error al cargar la página:', error));
 }
@@ -96,3 +112,7 @@ function movecarrucel(direction) {
     const newTransformValue = -currentIndex * 100;
     carrucelInner.style.transform = `translateX(${newTransformValue}%)`;
 }
+
+
+
+
