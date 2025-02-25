@@ -67,7 +67,10 @@ a {
         opacity: 1 !important;
     }
 
-    /* Mostrar el botón del menú en pantallas pequeñas */
+    nav.navbar ul li {
+        padding: 5px 0 !important; /* Espacio entre los elementos de lista */
+    }
+
     .menu-toggle {
         display: flex !important;
     }
@@ -141,27 +144,51 @@ nav.navbar ul li {
 nav.navbar ul li ul.submenu {
     display: none !important;
     position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    background-color: rgb(153, 37, 37) !important;
-    min-width: 180px !important;
-    flex-direction: column !important;
-    transition: all 0.3s ease !important;
+    background-color: #a9262c !important;
+    width: auto !important;
+    
 }
 
+/* Mostrar submenú al pasar el mouse */
 nav.navbar ul li:hover ul.submenu {
     display: flex !important;
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    
-    min-width: 110px !important; /* Ancho mínimo */
     flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    top: 150% !important;
+    left: -25px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-width: 150px !important;
     transition: all 0.3s ease !important;
+    padding: 10px 20px !important;
 }
 
+/* Ajustar los enlaces dentro del submenú */
+nav.navbar ul li ul.submenu li {
+    width: 100% !important;
+}
+
+nav.navbar ul li ul.submenu li a {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 10px !important;
+}
+
+/* Efecto hover */
 nav.navbar ul li ul.submenu li a:hover {
-    background-color: #c94343 !important; /* El color que prefieras */
+    background-color: #c94343 !important;
+}
+
+/* Ajuste para menú hamburguesa */
+@media (max-width: 1600px) {
+    nav.navbar ul.show ul.submenu {
+        background-color: rgba(250, 216, 216, 0.95) !important; 
+    }
+    nav.navbar ul li:hover ul.submenu {
+        top: 110% !important;
+    }
 }
 
 /* Footer */
@@ -171,8 +198,6 @@ footer {
     text-align: center !important;
     padding: 30px !important;
 }
-
-
 
 
 /* VERSION PARA TABLET */
@@ -195,7 +220,6 @@ footer {
         z-index: 1 !important; 
     }
 }
-
 
 
 /* Menu en sanwich cuando la ventana es más pequeña */
