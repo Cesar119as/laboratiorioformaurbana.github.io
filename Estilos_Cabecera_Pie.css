@@ -181,15 +181,24 @@ nav.navbar ul li ul.submenu li a:hover {
     background-color: #c94343 !important;
 }
 
-/* Ajuste para menú hamburguesa */
+/* Para pantallas pequeñas: desactivar el hover */
 @media (max-width: 1600px) {
-    nav.navbar ul.show ul.submenu {
-        background-color: rgba(250, 216, 216, 0.95) !important; 
-    }
+    
     nav.navbar ul li:hover ul.submenu {
+        display: none !important; /* El hover no hará que aparezca el submenú */
         top: 110% !important;
     }
+    nav.navbar ul li ul.submenu {
+        display: none !important; /* El submenú está oculto por defecto */
+    }
+   
+    /* Mostrar submenú cuando tenga la clase 'show' */
+    nav.navbar ul li ul.submenu.show {
+        display: flex  !important;
+        background-color: rgba(250, 216, 216, 0.95) !important;
+    }
 }
+
 
 /* Footer */
 footer {
