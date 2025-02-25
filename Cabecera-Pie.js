@@ -21,10 +21,6 @@ window.onload = function () {
     setupLinks();
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-    setupMenu();
-});
-
 // Función para manejar la visibilidad del menú hamburguesa
 function setupMenu() {
     const menuToggle = document.getElementById("menu-toggle");
@@ -35,8 +31,17 @@ function setupMenu() {
         return;
     }
 
+    // Funcionalidad para abrir/cerrar el menú
     menuToggle.addEventListener("click", function () {
         menu.classList.toggle("show");
+    });
+
+    // Cerrar el menú cuando se haga clic en un enlace
+    const menuLinks = menu.querySelectorAll('a'); // Seleccionar todos los enlaces dentro del menú
+    menuLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            menu.classList.remove("show"); // Cerrar el menú
+        });
     });
 
     // Cerrar el menú si se hace clic fuera
@@ -46,8 +51,6 @@ function setupMenu() {
         }
     });
 }
-
-
 
 // Función para manejar los enlaces dinámicos sin recargar la página
 function setupLinks() {
